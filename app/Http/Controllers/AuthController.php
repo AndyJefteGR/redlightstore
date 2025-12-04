@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Hash;
 use App\Models\User; 
 
 class AuthController extends Controller
+
 {
    public function signup(Request $request)
     {
@@ -24,7 +25,6 @@ class AuthController extends Controller
             
             'password' => Hash::make($validatedData['password']),
         ]);
-
         
         return response()->json([
             'message' => 'User registered successfully',

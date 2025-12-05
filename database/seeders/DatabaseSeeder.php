@@ -21,5 +21,8 @@ class DatabaseSeeder extends Seeder
             'name' => 'Test User',
             'email' => 'test@example.com',
         ]);
+
+        // Ejecutar game seeder para crear plots
+        $this->call(GameSeeder::class);
     }
 }

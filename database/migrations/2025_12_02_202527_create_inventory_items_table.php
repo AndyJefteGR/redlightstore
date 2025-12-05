@@ -4,17 +4,14 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      */
     public function up(): void
     {
-        Schema::create('inventory_items', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-        });
+        // This table is no longer needed as we're using user_inventories instead
+        // Keeping the migration for reference but it's empty
     }
 
     /**
@@ -22,6 +19,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('inventory_items');
+        //
     }
 };
+

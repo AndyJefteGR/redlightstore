@@ -5,29 +5,20 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class UserInventory extends Model
+class Wallet extends Model
 {
     use HasFactory;
 
     protected $fillable = [
         'user_id',
-        'item_id',
-        'quantity',
+        'cash',
     ];
 
     /**
-     * Get the user this inventory belongs to
+     * Get the user that owns this wallet
      */
     public function user()
     {
         return $this->belongsTo(User::class);
-    }
-
-    /**
-     * Get the item in this inventory
-     */
-    public function item()
-    {
-        return $this->belongsTo(Item::class);
     }
 }

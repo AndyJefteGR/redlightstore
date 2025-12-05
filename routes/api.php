@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\StoreController;
 use App\Http\Controllers\InventoryController;
 use App\Http\Controllers\ShopController;
+use App\Http\Controllers\ControllerCauldron;
 
 // Public authentication routes
 Route::post('/signup', [AuthController::class, 'signup']);
@@ -27,4 +28,7 @@ Route::middleware('auth:sanctum')->group(function () {
     // Shop routes
     Route::post('/shop/buy', [ShopController::class, 'buyItem']);
     Route::post('/shop/sell', [ShopController::class, 'sellItem']);
+
+    // cauldron routes
+    Route::post('/cauldron/brew', [ControllerCauldron::class, 'brewPotion']);
 });
